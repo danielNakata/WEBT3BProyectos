@@ -116,7 +116,7 @@ var aplicaciones;
     });
     
     
-    aplicaciones.controller('listaLogDescargasController', function($scope, ListaLogDescargasFactory){
+    aplicaciones.controller('listaLogDescargasController', function($scope,ListaLogDescargasFactory){
         $scope.$watch('search', function(newValue, oldValue){
             var promesa = ListaLogDescargasFactory.get(newValue);
             promesa.then(function(value){
@@ -125,54 +125,9 @@ var aplicaciones;
             }, function(reason){
                 $scope.error = reason;
             });
-            
-            $scope.sort = {
-                sortingOrder: 'fechadescarga',
-                reverse: false
-            };
-            
-            $scope.gap = 10;
-            
-            $scope.filteredItems = [];
-            $scope.groupedItems = [];
-            $scope.itemsPerPage = 10;
-            $scope.pagedItems = [];
-            $scope.currentPage = 0;
-            $scope.items = $scope.resps.datos;
-            
-            $scope.range = function (size,start, end) {
-                var ret = [];        
-                console.log(size,start, end);
-
-                if (size < end) {
-                    end = size;
-                    start = size-$scope.gap;
-                }
-                for (var i = start; i < end; i++) {
-                    ret.push(i);
-                }        
-                 console.log(ret);        
-                return ret;
-            };
-            
-            $scope.prevPage = function () {
-                if ($scope.currentPage > 0) {
-                    $scope.currentPage--;
-                }
-            };
-
-            $scope.nextPage = function () {
-                if ($scope.currentPage < $scope.pagedItems.length - 1) {
-                    $scope.currentPage++;
-                }
-            };
-
-            $scope.setPage = function () {
-                $scope.currentPage = this.n;
-            };
-            
         });
     });
+    
     
     
     aplicaciones.controller('ControlTab', function(){

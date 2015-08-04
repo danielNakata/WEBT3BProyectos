@@ -13,10 +13,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/dashboard.css" rel="stylesheet" type="text/css" />
+        <link href="css/ng-table.min.css" rel="stylesheet" type="text/css" />
         <script src="js/jquery.min.js"></script>
         <script src="css/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript" src="js/aplicaciones.js"></script>
+        <script type="text/javascript" src="js/ng-table.min.js"></script>
         <script src="js/funciones.js"></script>
     </head>
     <body>
