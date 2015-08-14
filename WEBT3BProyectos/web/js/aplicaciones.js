@@ -116,7 +116,7 @@ var aplicaciones;
     });
     
     
-    aplicaciones.controller('listaLogDescargasController', function($scope,ListaLogDescargasFactory){
+    aplicaciones.controller('listaLogDescargasController', function($scope, ListaLogDescargasFactory){
         $scope.$watch('search', function(newValue, oldValue){
             var promesa = ListaLogDescargasFactory.get(newValue);
             promesa.then(function(value){
@@ -124,8 +124,8 @@ var aplicaciones;
                 $scope.resps = value;
             }, function(reason){
                 $scope.error = reason;
-            });
-        });
+            });             
+        });  
     });
     
     
